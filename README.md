@@ -71,7 +71,7 @@ Diagnostic Context (MDC) is used. https://12factor.net/logs. Do not log any sens
 - [ ] **Resiliency**, implement **fallback logic** for every external dependency, for which this was possible and needed. Ask yourself “Is this resource needed to fulfill my business function, or can I (even partially) succeed without it?” (Remember that [Fallbacks can be tricky](https://nurkiewicz.com/2019/07/fallbacks-are-overrated-architecting.html) and implementing a **compensation job** might be required)
 - [ ] **Resource limits**: Contains limits for memory, CPU, disk space, and any other available resources in the agreed format.
 - [ ] **Artifact Managemen**t / Libraries & dependency proxy : JFROG Artifactory / Gitlab
-- [ ] **Discovery / DNS**
+- [ ] **Discovery / DNS** configured
 - [ ] Setting **DNS Cache TTL** (hint for [Java](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-jvm-ttl.html))
 - [ ] **Dead letter queues** or/and resistance to "bad" messages (if queues are used)
 - [ ] **Feature Flags** if needed (LaunchDarkly)
