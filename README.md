@@ -42,7 +42,7 @@ These are the principles that I have developed over the years of my professional
 
 - [ ] **Linters** (with reports that can be exported to e.g. SonarQube)
 - [ ] Automatic code **Formatter** (e.g. gofmt, ktfmt)
-- [ ] **Test coverage** above 70% (use common sense, just getting to the required number of coverage is not a goal here )
+- [ ] **Test coverage** above 70% (use common sense, just getting to the required number of coverage is not a goal here)
 - [ ] **Functional/e2e/acceptance** tests in place
 - [ ] **Load Test**s (at least basic ones) especially if higher traffic is expected
 - [ ] **Contract Tests** are recommended if there is service 2 service communication via HTTP (example: PACT tests)
