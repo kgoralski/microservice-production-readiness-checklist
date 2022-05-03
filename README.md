@@ -79,7 +79,7 @@ Diagnostic Context (MDC) is used. https://12factor.net/logs. Do not log any sens
 - [ ] Use private **Docker Registry** (AWS ECR , Gitlab)
 - [ ] Immutable deployments
 - [ ] When using containers like Docker - the only single process is running inside the container, with your application Data Migration, migration scripts etc. (e.g. Flyway, Liquibase, gh-ost, Percona) - [avoid manual changes on the database](https://softwareengineering.stackexchange.com/questions/207987/safely-fixing-production-database-data) (tip: use a separate process for migrations ) - executed as separate process/job
-- [ ] Minimum 2 pods on production and/or PodDisruptionBudget/NodeAntiAffinity - whichever is appropriate to mitigate against a node failure - when running in Kubernetes - where possible
+- [ ] Minimum 2 pods on production and/or PodDisruptionBudget/NodeAntiAffinity - whichever is appropriate to mitigate against a node failure - when running in Kubernetes
 - [ ] Define [SLO/SLI/SLA](https://cloud.google.com/blog/products/devops-sre/sre-fundamentals-slis-slas-and-slos)
 - [ ] Build applications with **Multi-tenancy** in mind (sites, regions, users, etc.)
 
