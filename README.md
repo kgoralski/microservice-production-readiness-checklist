@@ -62,6 +62,7 @@ Diagnostic Context (MDC) is used. https://12factor.net/logs. Do not log any sens
 - [ ] Measure latency using percentiles. Discover the expected peak latency of the system, when healthy. Measure it and know 99%ile of the response times. Discover the expected peak throughput of my system, when healthy. Measure requests-per-minute or requests-per-second
 
 ### Operations and Resiliency
+
 - [ ] There is **staging environment** or any other **multi-tenancy environment** - Don’t push directly to production
 - [ ] There is **autoscaling** in place (based on CPU, memory, traffic, events/messages e.g. HPA with K8S)
 - [ ] **Graceful shutdown**: The application understands SIGTERM and other signals and will gracefully shutdown itself after processing the current task. https://12factor.net/disposability
@@ -86,16 +87,18 @@ Diagnostic Context (MDC) is used. https://12factor.net/logs. Do not log any sens
 
 
 ### Database
+
 - [ ] Follow best practices from Cloud Provider (e.g. [AWS Aurora](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.BestPractices.html)) and prepare for Fast Failover
 - [ ] **Data Org support** (external team might have such requirements) - DB needs to be in provisioned mode instead of serverless if Bin Logs are used for exporting data, use bigger instances than t.small ones (e.g. t.small instances don’t support IAM access)
 - [ ] **Database**’s Connection string and Connection pool configured for the needed workload
 - [ ] **Database** (e.g. RDS - Aurora Writer/Reader endpoint consumed for better scalability, DocumentDB - use ReplicaSet in this case etc.)
-- [ ] **Database** integration with Backup Tooling
+- [ ] **Database** integration with Backup Tooling - test regularly your restore process
 - [ ] Different **Database** users for RDS cluster admin and application usage
 - [ ] Maintenance window defined
 - [ ] Encryption enabled (e.g. with AWS KMS key)
 
 ### Security and Compliance
+
 - [ ] If your service does not absolutely need to be directly accessible from the public Internet, do not expose it publicly - hide it behind VPN (at least)
 - [ ] If your service does need to be accessible through the public Internet
      - [ ] **Authentication/Authorization** in place if needed / JWT / Cognito / Auth0
