@@ -25,7 +25,7 @@ These are the principles that I have developed over the years of my professional
 
 - [ ] Write a **RFC** and publish it on architecture-guild channel if your change with the new microservice may affect the work of other teams
 - [ ] **No shared database between different services** - a DB instance should only be used by one service exclusively.
-- [ ] **Not breaking the one-hop rule** - [<em> “By default, a service should not call other services to respond to a request, except in exceptional circumstances.” A service should not call other services to respond to a request; it should be self-contained and manage its own data. Allowing a service to call on other services adds overhead to the request and can result in very slow or unresponsive service. </em>](https://thenewstack.io/are-your-microservices-overly-chatty/)  Also it leads to tightly coupled services and a more complex system. If you see that you need multiple calls back and forth between several services to synthesize the response, you should consider merging these services into one.). The exception can be for example Backend For Frontend (like GraphQL) which can compose and aggregate data on top of other services.
+- [ ] **Not breaking the one-hop rule** - [<em> “By default, a service should not call other services to respond to a request, except in exceptional circumstances.” A service should not call other services to respond to a request; it should be self-contained and manage its own data. Allowing a service to call on other services adds overhead to the request and can result in very slow or unresponsive service. </em>](https://thenewstack.io/are-your-microservices-overly-chatty/)  Also it leads to tightly coupled services and a more complex system causing cascading issues. If you see that you need multiple calls back and forth between several services to synthesize the response, you should consider merging these services into one.). The exception can be for example Backend For Frontend (like GraphQL) which can compose and aggregate data on top of other services.
 - [ ] **Prefer APIs over Sharing SDKs**. Try to avoid using SDKs between the services, it is not needed. [<em>SDKs introduce another level of complexity, making the microservice team support not only API to their product but also the code that uses that API</em>](https://enterprisecraftsmanship.com/posts/how-to-build-microservices-wrong/). They are also introducing the problems like updating the version of SDK in multiple services. Also, it prevents asynchronous way of development between the teams. Because Team A needs to wait for Team B to finish the work around the SDK.
 - [ ] If you can try to avoid making HTTP calls from Monolith to your service and the same in opposite direction: try to do not call Monolith, do not increase load there. Your service should be independent.
 - [ ] Choose Boring Technology https://boringtechnology.club/ :)  
@@ -80,7 +80,7 @@ Diagnostic Context (MDC) is used. https://12factor.net/logs. Do not log any sens
 - [ ] **Locked versions of dependencies**: Dependencies for package managers are fixed, including minor versions (For example, cool_framework = 2.5.3). Committed lock files are also a good way to do this.
 - [ ] Use private **Docker Registry** (AWS ECR , Gitlab)
 - [ ] Use Immutable deployments and if possible Canary deployments
-- [ ] When using containers like Docker - the only single process is running inside the container, with your application Data Migration, migration scripts etc. (e.g. Flyway, Liquibase, gh-ost, Percona) - [avoid manual changes on the database](https://softwareengineering.stackexchange.com/questions/207987/safely-fixing-production-database-data) (tip: use a separate process for migrations ) - executed as separate process/job
+- [ ] When using containers like Docker - the only single process is running inside the container, with your application 
 - [ ] Minimum 2 pods on production and/or PodDisruptionBudget/NodeAntiAffinity - whichever is appropriate to mitigate against a node failure - when running in Kubernetes
 - [ ] Define [SLO/SLI/SLA](https://cloud.google.com/blog/products/devops-sre/sre-fundamentals-slis-slas-and-slos)
 - [ ] Build applications with **Multi-tenancy** in mind (sites, regions, users, etc.)
@@ -96,6 +96,7 @@ Diagnostic Context (MDC) is used. https://12factor.net/logs. Do not log any sens
 - [ ] Different **Database** users for RDS cluster admin and application usage
 - [ ] Maintenance window defined
 - [ ] Encryption enabled (e.g. with AWS KMS key)
+- [ ] Data Migration, migration scripts etc. (e.g. Flyway, Liquibase, gh-ost, Percona) - [avoid manual changes on the database](https://softwareengineering.stackexchange.com/questions/207987/safely-fixing-production-database-data) (tip: use a separate process for migrations ) - executed as separate process/job
 
 ### Security and Compliance
 
