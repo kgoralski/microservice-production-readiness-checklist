@@ -105,6 +105,7 @@ Diagnostic Context (MDC) is used. https://12factor.net/logs. Do not log any sens
      - [ ] **Authentication/Authorization** in place if needed / JWT / Cognito / Auth0
      - [ ] Ensure it lives behind our Cloudfront **CDN** (and uses **WAF** if necessary)
 - [ ] **Vulnerabilities scan check** (e.g. SonarQube)
+- [ ] Run containers in [Rootless mode](https://docs.docker.com/engine/security/rootless/)
 - [ ] **HTTPS** (if needed)
 - [ ] Does not violate any licenses
 - [ ] **GDPR** data not exposed (https://gdpr-info.eu/art-4-gdpr/)
