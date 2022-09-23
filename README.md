@@ -64,6 +64,7 @@ Diagnostic Context (MDC) is used. https://12factor.net/logs. Do not log any sens
 ### Operations and Resiliency
 
 - [ ] There is **staging environment** or any other **multi-tenancy environment** - Don’t push directly to production
+- [ ] There is a **rolling strategy** defined 
 - [ ] There is **autoscaling** in place (based on CPU, memory, traffic, events/messages e.g. HPA with K8S)
 - [ ] **Graceful shutdown**: The application understands SIGTERM and other signals and will gracefully shutdown itself after processing the current task. https://12factor.net/disposability
 - [ ] **Configuration** via environment: All important configuration options are read from the environment and the environment has higher priority over configuration files (but lower than the command line arguments). https://12factor.net/config
