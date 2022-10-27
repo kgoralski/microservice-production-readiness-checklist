@@ -82,7 +82,7 @@ Diagnostic Context (MDC) is used. https://12factor.net/logs. Do not log any sens
 - [ ] Use private **Docker Registry** (AWS ECR , Gitlab)
 - [ ] Use Immutable deployments and if possible Canary deployments
 - [ ] When using containers like Docker - the only single process is running inside the container, with your application 
-- [ ] Minimum 2 pods on production and/or PodDisruptionBudget/NodeAntiAffinity - whichever is appropriate to mitigate against a node failure - when running in Kubernetes
+- [ ] Minimum 2 or 3 pods on production and/or PodDisruptionBudget/NodeAntiAffinity - whichever is appropriate to mitigate against a node failure - when running in Kubernetes
 - [ ] Define [SLO/SLI/SLA](https://cloud.google.com/blog/products/devops-sre/sre-fundamentals-slis-slas-and-slos)
 - [ ] Build applications with **Multi-tenancy** in mind (sites, regions, users, etc.)
 
