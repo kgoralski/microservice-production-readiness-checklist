@@ -51,7 +51,7 @@ These are the principles that I have developed over the years of my professional
 ### Observability
 
 - [ ] **Logging**: All logs are written to STDOUT / STDERR. Logs are written in JSON. Configured verbosity levels. Correlation IDs, Mapped
-Diagnostic Context (MDC) is used. https://12factor.net/logs. Do not log any sensitive data. Shipped to e.g. ELK, Stackdriver, etc.
+Diagnostic Context (MDC) is used. https://12factor.net/logs. Do not log any sensitive data. Shipped to e.g. ELK, Stackdriver, etc. Log levels like `debug` or `trace` should be not used by default.
 - [ ] Integration with a **monitoring platforms**. Dashboards in place. (e.g. NewRelic / Prometheus / Grafana)
 - [ ] **Monitoring dashboards** with Business Metrics (e.g. New Relic / Prometheus / Grafana)
 - [ ] Integration with a **distributed tracing system**: (e.g. New Relic)
